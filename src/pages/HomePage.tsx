@@ -109,7 +109,7 @@ export function HomePage() {
                 <div className="w-px h-12 bg-border" />
                 <div className="text-center">
                   <div className="text-2xl lg:text-3xl font-bold text-primary">
-                    ০%
+                    ১০০%
                   </div>
                   <div className="text-sm text-muted-foreground">অফলাইন</div>
                 </div>
