@@ -15,39 +15,52 @@
     <meta name="language" content="Bangla">
     <meta name="revisit-after" content="7 days">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://hishabnikash.com/">
+    <!-- Dynamic Canonical URL -->
+    <link rel="canonical" href="" id="canonical-link">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hishabnikash.com/">
+    <meta property="og:url" content="" id="og-url">
     <meta property="og:title" content="হিসাব নিকাশ — আপনার টাকার পূর্ণ নিয়ন্ত্রণ">
     <meta property="og:description" content="বাংলাদেশের সেরা অফলাইন ব্যক্তিগত ফাইন্যান্স অ্যাপ। খরচ ট্র্যাক করুন, বাকির খাতা রাখুন, সেভিংস গোল সেট করুন।">
-    <meta property="og:image" content="https://hishabnikash.com/images/logo.jpg">
+    <meta property="og:image" content="/images/logo.jpg" id="og-image">
     <meta property="og:locale" content="bn_BD">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://hishabnikash.com/">
+    <meta property="twitter:url" content="" id="twitter-url">
     <meta property="twitter:title" content="হিসাব নিকাশ — আপনার টাকার পূর্ণ নিয়ন্ত্রণ">
     <meta property="twitter:description" content="বাংলাদেশের সেরা অফলাইন ব্যক্তিগত ফাইন্যান্স অ্যাপ।">
-    <meta property="twitter:image" content="https://hishabnikash.com/images/logo.jpg">
+    <meta property="twitter:image" content="/images/logo.jpg" id="twitter-image">
     
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="/images/logo.jpg">
     <link rel="apple-touch-icon" href="/images/logo.jpg">
     
-    <!-- Google Analytics (placeholder - add your GA ID) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <!-- Dynamic URL Script -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
-    </script> -->
-    
-    <!-- Google Search Console (placeholder - add your verification code) -->
-    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE"> -->
+      (function() {
+        var currentUrl = window.location.href.split('?')[0].split('#')[0];
+        var canonicalLink = document.getElementById('canonical-link');
+        var ogUrl = document.getElementById('og-url');
+        var twitterUrl = document.getElementById('twitter-url');
+        var ogImage = document.getElementById('og-image');
+        var twitterImage = document.getElementById('twitter-image');
+        
+        if (canonicalLink) canonicalLink.href = currentUrl;
+        if (ogUrl) ogUrl.content = currentUrl;
+        if (twitterUrl) twitterUrl.content = currentUrl;
+        
+        // Set absolute URLs for images
+        var baseUrl = window.location.origin;
+        if (ogImage && ogImage.content.startsWith('/')) {
+          ogImage.content = baseUrl + ogImage.content;
+        }
+        if (twitterImage && twitterImage.content.startsWith('/')) {
+          twitterImage.content = baseUrl + twitterImage.content;
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
