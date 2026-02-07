@@ -75,7 +75,7 @@ export function PrivacyPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 animate-fade-in-up">
-            আপনার ডেটা শুধুমাত্র
+            আপনার ডেটা শুধুমাত্র 
             <span className="text-primary block mt-2">
               আপনার ডিভাইসেই থাকে
             </span>
