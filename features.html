@@ -13,27 +13,47 @@
     <meta name="robots" content="index, follow">
     <meta name="language" content="Bangla">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://hishabnikash.com/features">
+    <!-- Dynamic Canonical URL -->
+    <link rel="canonical" href="" id="canonical-link">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hishabnikash.com/features">
+    <meta property="og:url" content="" id="og-url">
     <meta property="og:title" content="হিসাব নিকাশ সুবিধাসমূহ">
     <meta property="og:description" content="হিসাব নিকাশ অ্যাপের সকল সুবিধা জানুন।">
-    <meta property="og:image" content="https://hishabnikash.com/images/logo.jpg">
+    <meta property="og:image" content="/images/logo.jpg" id="og-image">
     <meta property="og:locale" content="bn_BD">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://hishabnikash.com/features">
+    <meta property="twitter:url" content="" id="twitter-url">
     <meta property="twitter:title" content="হিসাব নিকাশ সুবিধাসমূহ">
     <meta property="twitter:description" content="হিসাব নিকাশ অ্যাপের সকল সুবিধা জানুন।">
-    <meta property="twitter:image" content="https://hishabnikash.com/images/logo.jpg">
+    <meta property="twitter:image" content="/images/logo.jpg" id="twitter-image">
     
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="/images/logo.jpg">
     <link rel="apple-touch-icon" href="/images/logo.jpg">
+    
+    <!-- Dynamic URL Script -->
+    <script>
+      (function() {
+        var currentUrl = window.location.href.split('?')[0].split('#')[0];
+        var baseUrl = window.location.origin;
+        
+        var canonicalLink = document.getElementById('canonical-link');
+        var ogUrl = document.getElementById('og-url');
+        var twitterUrl = document.getElementById('twitter-url');
+        var ogImage = document.getElementById('og-image');
+        var twitterImage = document.getElementById('twitter-image');
+        
+        if (canonicalLink) canonicalLink.href = currentUrl;
+        if (ogUrl) ogUrl.content = currentUrl;
+        if (twitterUrl) twitterUrl.content = currentUrl;
+        if (ogImage) ogImage.content = baseUrl + '/images/logo.jpg';
+        if (twitterImage) twitterImage.content = baseUrl + '/images/logo.jpg';
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
