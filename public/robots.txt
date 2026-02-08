@@ -1,11 +1,40 @@
 # robots.txt for Hishab Nikash
-# https://hishabnikash.com
+# https://hishabnikashbd.vercel.app
 
+# Allow all AI crawlers explicitly
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Allow all other crawlers
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://hishabnikash.com/sitemap.xml
+# Sitemap (correct URL)
+Sitemap: https://hishabnikashbd.vercel.app/sitemap.xml
 
 # Disallow admin or private areas (if any)
 # Disallow: /admin/
